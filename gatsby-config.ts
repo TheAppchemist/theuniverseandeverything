@@ -3,7 +3,8 @@ import type { GatsbyConfig } from "gatsby";
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `The Universe and Everything`,
-    siteUrl: `https://www.yourdomain.tld`
+    subtitle: `A new way of thinking, or rather - reverting back to the old ways of thinking`,
+    siteUrl: `https://www.theuniverseandeverything.com`
   },
   plugins: ["gatsby-plugin-netlify-cms", {
     resolve: 'gatsby-plugin-google-analytics',
@@ -29,6 +30,18 @@ const config: GatsbyConfig = {
       "path": "./src/pages/"
     },
     __key: "pages"
+  }, {
+    resolve: 'gatsby-source-filesystem',
+    options: {
+      "name": "pages",
+      "path": "./content/blogs"
+    }
+  }, {
+    resolve: 'gatsby-source-filesystem',
+    options: {
+      "name": "pages",
+      "path": "./content/authors"
+    }
   }]
 };
 
